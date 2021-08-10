@@ -1,28 +1,24 @@
-const canvas = document.querySelector("canvas");
-const context = canvas.getContext("2d");
+const canvasElement = document.querySelector('canvas');
 
-//Screens
-const screen1 = document.getElementById("screen1");
-const screen2 = document.getElementById("screen2");
-const screen3 = document.getElementById("screen3");
+const screenStartElement = document.getElementById('screen-start');
+const screenPlayingElement = document.getElementById('screen-playing');
+const screenGameOverElement = document.getElementById('screen-game-over');
 
 const screenElements = {
-    start:   screen1,
-    playing: screen2,
-    lose:    screen3,
+  start: screenStartElement,
+  playing: screenPlayingElement,
+  gameOver: screenGameOverElement,
 };
 
-const game = new Game(canvas, screenElements);
+const game = new Game(canvasElement, screenElements);
 
-//BUTTONS
-const startButton = screen1.querySelector("button");
-const loseButton = screen3.querySelector("button");
+const startButton = screenStartElement.querySelector('button');
+const tryAgainButton = screenGameOverElement.querySelector('button');
 
-startButton.addEventListener = ("click", () =>{
-    game.start();
+startButton.addEventListener('click', () => {
+  game.start();
 });
 
-loseButton.addEventListener = ("click", () =>{
-    game.start();
+tryAgainButton.addEventListener('click', () => {
+  game.start();
 });
-  
